@@ -63,7 +63,7 @@ STATES = {
 }
 # Les autres états ont trois images : normal, survol, appui.
 ANIMATED = ('loading', 'recording', 'busy')
-BUTTON_SIZE = 56
+BUTTON_SIZE = 42
 FRAMES = Path(__file__).with_name('bouton')
 
 

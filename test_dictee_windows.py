@@ -36,8 +36,8 @@ class WindowsTests(unittest.TestCase):
             for image in images:
                 self.assertEqual(len(image), BUTTON_SIZE*BUTTON_SIZE*4)
                 self.assertEqual(image[3], 0, 'Coin transparent')
-                center = (28*BUTTON_SIZE + 28)*4
-                self.assertEqual(image[center+3], 255, 'Centre opaque')
+                center = ((BUTTON_SIZE//2)*BUTTON_SIZE + BUTTON_SIZE//2)*4
+                self.assertGreater(image[center+3], 120, 'Centre visible pendant les animations')
                 # BGRA prémultiplié : aucun canal ne dépasse l'alpha.
                 self.assertTrue(all(max(image[i:i+3]) <= image[i+3] for i in range(0, len(image), 4)))
 

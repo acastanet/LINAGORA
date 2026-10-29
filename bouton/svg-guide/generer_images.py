@@ -12,7 +12,7 @@ from PIL import Image
 from generer import bouton
 
 ROOT = Path(__file__).resolve().parent.parent
-SIZE = 56
+SIZE = 42
 
 
 def render(svg):
@@ -34,17 +34,14 @@ def frames(theme):
     result['loading'] = []
     for i in range(16):
         opacity = .65 + .35 * (1 + math.cos(i * math.tau / 16)) / 2
-        svg = bouton(theme, 'ecoute-micro').replace('stroke-dasharray="480 98"',
-                                                      f'stroke-opacity="{opacity:.3f}" stroke-dasharray="480 98"')
+        svg = bouton(theme, 'ecoute-micro').replace('<path d="M 17 103', f'<path opacity="{opacity:.3f}" d="M 17 103', 1)
         result['recording'].append(render(svg))
     for i in range(12):
-        angle = -90 + i * 30
-        svg = bouton(theme, 'enregistrement').replace('rotate(-90 100 100)', f'rotate({angle} 100 100)')
+        opacity = .65 + .35 * (1 + math.cos(i * math.tau / 12)) / 2
+        svg = bouton(theme, 'enregistrement').replace('<path d="M 17 103', f'<path opacity="{opacity:.3f}" d="M 17 103', 1)
         result['busy'].append(render(svg))
-        arc = (f'<circle cx="100" cy="100" r="92" fill="none" stroke="#90949b" '
-               f'stroke-width="8" stroke-linecap="round" stroke-dasharray="125 453" '
-               f'transform="rotate({angle} 100 100)"/>')
-        result['loading'].append(render(bouton(theme, 'desactive').replace('</svg>', arc + '</svg>')))
+        svg = bouton(theme, 'desactive').replace('<path d="M 17 103', f'<path opacity="{opacity:.3f}" d="M 17 103', 1)
+        result['loading'].append(render(svg))
     return result
 
 

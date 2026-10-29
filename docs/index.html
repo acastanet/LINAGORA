@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plume, la dictée vocale en français qui transforme votre voix en texte directement sur votre ordinateur.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Plume — La parole prend forme</title>
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header wrap">
+    <a class="brand" href="#haut" aria-label="Plume, accueil"><img src="logo.svg" alt="" width="49" height="49"><span>plume<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Navigation principale"><a href="#fonctionnement">Comment ça marche</a><a href="#modele">La technologie</a><a class="nav-end" href="#questions">Questions fréquentes <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="haut">
+    <section class="hero wrap" aria-labelledby="titre">
+      <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> DICTÉE VOCALE LOCALE · WINDOWS</p>
+        <h1 id="titre">Vos idées<br>prennent <em>la parole.</em></h1>
+        <p class="hero-intro">Parlez naturellement. Plume écrit pour vous, directement dans vos applications. Votre voix reste sur votre ordinateur.</p>
+        <div class="hero-actions"><a class="button" href="#fonctionnement">Découvrir Plume <span aria-hidden="true">↘</span></a><span class="action-note">Simple à utiliser.<br>À portée de voix.</span></div>
+      </div>
+      <div class="hero-art"><span class="art-caption">LA PAROLE PREND FORME</span><img src="logo.svg" alt="Bouche tenant une plume, logo de Plume"><span class="art-bottom">VOIX → TEXTE</span></div>
+      <div class="hero-foot"><span>VOTRE VOIX, VOS MOTS.</span><span>01 / 04</span></div>
+    </section>
+    <section id="fonctionnement" class="section wrap how">
+      <div class="section-top"><p class="eyebrow">01 / COMMENT ÇA MARCHE</p><h2>Une idée.<br><em>Et les mots suivent.</em></h2></div>
+      <div class="how-content"><p class="lead">Restez là où vous travaillez. Plume transforme votre parole en texte, sans détour.</p>
+        <div class="steps"><div><span>01</span><h3>Placez le curseur.</h3><p>Ouvrez un document, un message ou un champ de texte.</p></div><div><span>02</span><h3>Parlez à Plume.</h3><p>Cliquez sur la bouche, dictez, puis cliquez à nouveau.</p></div><div><span>03</span><h3>Retrouvez vos mots.</h3><p>Votre texte est transcrit et inséré à l’emplacement du curseur.</p></div></div>
+        <p class="keyboard">ENCORE PLUS DIRECT <span>Ctrl</span> + <span>Alt</span> + <span>Espace</span></p>
+      </div>
+    </section>
+    <section class="statement"><div class="wrap statement-inner"><p class="eyebrow">02 / PENSÉ POUR LE QUOTIDIEN</p><p class="statement-text">Moins de clavier.<br>Plus de <em>liberté.</em></p><p class="statement-copy">Une pensée à saisir, une réponse à écrire, un texte à commencer : la parole devient une autre façon de travailler, à votre rythme.</p></div></section>
+    <section class="section wrap benefits"><div class="section-top"><p class="eyebrow">03 / POURQUOI PLUME</p><h2>Une voix libre.<br><em>Un outil discret.</em></h2></div><div class="benefit-list">
+      <div><span>01</span><h3>Vos mots, à leur place.</h3><p>Le texte arrive directement dans le champ actif. Vous poursuivez votre travail dans vos applications habituelles.</p></div>
+      <div><span>02</span><h3>Votre voix reste chez vous.</h3><p>La reconnaissance est réalisée localement sur votre ordinateur. La version portable fonctionne sans connexion Internet.</p></div>
+      <div><span>03</span><h3>La simplicité en un clic.</h3><p>Une petite bouche flottante accompagne votre journée. Déplacez-la où vous voulez et utilisez-la quand vous en avez besoin.</p></div>
+    </div></section>
+    <section id="modele" class="section wrap model"><div class="section-top"><p class="eyebrow">04 / SOUS LE CAPOT</p><h2>Une technologie<br><em>qui a de la voix.</em></h2></div><div class="model-content"><p class="lead">Plume s’appuie sur LinTO, un modèle de reconnaissance vocale française adapté par les équipes de LINAGORA.</p><p>LINAGORA est une entreprise française du logiciel libre fondée en 2000. Son modèle LinTO est issu de FastConformer de NVIDIA et adapté à partir de plus de 10 000 heures de parole française.</p><div class="facts"><div><strong>10 000<span>+</span></strong><small>heures de parole française<br>pour l’entraînement</small></div><div><strong>115<span>M</span></strong><small>paramètres<br>dans le modèle</small></div><div><strong>100<span>%</span></strong><small>traitement local<br>sur votre ordinateur</small></div></div><p class="source">Modèle mis à disposition sous licence CC BY 4.0. <a href="https://huggingface.co/linagora/linto_stt_fr_fastconformer_pc" target="_blank" rel="noopener noreferrer">Voir la fiche du modèle ↗</a></p></div></section>
+    <section id="questions" class="section wrap faq"><div class="section-top"><p class="eyebrow">EN QUELQUES MOTS</p><h2>Bon à <em>savoir.</em></h2></div><div class="answers"><details><summary>Une connexion Internet est-elle nécessaire ?</summary><p>La version portable CPU comprend le modèle et fonctionne hors ligne. Pour une installation Python sans modèle local, un téléchargement est nécessaire à la première utilisation.</p></details><details><summary>Où vont mes enregistrements ?</summary><p>La reconnaissance vocale est effectuée sur votre ordinateur. Les enregistrements ne sont pas envoyés à un service de transcription en ligne par Plume.</p></details><details><summary>Dans quelles applications puis-je dicter ?</summary><p>Dans vos champs de texte Windows habituels. Gardez le curseur au même endroit jusqu’à l’insertion. Si vous changez de fenêtre, vous pouvez récupérer le texte par copie.</p></details><details><summary>La transcription est-elle toujours parfaite ?</summary><p>Elle peut nécessiter des corrections, notamment avec des termes rares, des accents marqués ou plusieurs voix qui se chevauchent.</p></details></div></section>
+    <section class="closing wrap"><img src="logo.svg" alt="" width="110" height="110"><p>À vous <em>la parole.</em></p><a href="#haut">Revenir en haut ↑</a></section>
+  </main>
+  <footer class="footer wrap"><span class="brand footer-brand">plume<span class="brand-dot">.</span></span><p>La dictée vocale qui reste près de vous.</p><div><a href="https://linagora.com/linto/" target="_blank" rel="noopener noreferrer">Découvrir LinTO ↗</a><span>FAIT POUR WINDOWS</span></div></footer>
+</body>
+</html>

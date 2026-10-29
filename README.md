@@ -1,5 +1,7 @@
 # Test de LinTO STT français
 
+La page de présentation de **Plume** est disponible sur [GitHub Pages](https://acastanet.github.io/LINAGORA/). Son code source se trouve dans `docs/`.
+
 Mini-interface locale pour [linto_stt_fr_fastconformer_pc](https://huggingface.co/linagora/linto_stt_fr_fastconformer_pc). Elle accepte un enregistrement au microphone ou un fichier audio et affiche la transcription ponctuée.
 
 Dans l'onglet « Microphone », démarrez l'enregistrement puis arrêtez-le : le micro est aussitôt remis à zéro et la transcription démarre automatiquement. Les fichiers temporaires de Gradio sont nettoyés automatiquement après utilisation (avec un délai d'environ une à deux minutes). Dans l'onglet « Fichier audio », utilisez le bouton « Transcrire ».
@@ -14,23 +16,23 @@ Le modèle a été entraîné sur des extraits allant jusqu'à 30 secondes ; com
 
 ## Dictée vocale dans Windows
 
-Double-cliquez sur **Dictee-LinTO.exe** : un bouton flottant rond de 56 × 56 pixels apparaît sans console noire. Il présente une bouche rouge sur un disque clair ou sombre, selon le thème des applications Windows. La bouche s'entrouvre au survol et s'ouvre à l'appui. Le modèle est chargé en arrière-plan une seule fois : la bouche est grisée et un arc gris tourne autour du bouton, puis les couleurs reviennent quand la dictée est prête. Ce lanceur local requiert Python 3.11 et les dépendances du logiciel déjà installées ; les anciens lanceurs restent utilisables.
+Double-cliquez sur **Dictee-LinTO.exe** : un bouton flottant de 42 × 42 pixels apparaît sans console noire. Il présente une bouche rouge sur fond transparent, sans disque. La bouche s'entrouvre au survol et s'ouvre à l'appui. Le modèle est chargé en arrière-plan une seule fois : la bouche grise pulse, puis elle redevient rouge quand la dictée est prête. Ce lanceur local requiert Python 3.11 et les dépendances du logiciel déjà installées ; les anciens lanceurs restent utilisables.
 
 1. Placez le curseur dans votre document ou votre champ de texte.
-2. Cliquez sur la bouche : elle s'ouvre, un micro apparaît en bas et un anneau rouge pulse tant que le micro enregistre.
-3. Cliquez à nouveau : la bouche reste ouverte et un arc rouge tourne pendant la transcription. Le texte est inséré automatiquement, puis la bouche se referme.
+2. Cliquez sur la bouche : elle s'ouvre et pulse tant que le micro enregistre.
+3. Cliquez à nouveau : la bouche ouverte devient bordeaux et pulse pendant la transcription. Le texte est inséré automatiquement, puis la bouche se referme.
 
 Le bouton reste au-dessus des fenêtres sans prendre leur focus. Déplacez-le par un glissement depuis n'importe quel point. **Ctrl+Alt+Espace** permet aussi de démarrer et arrêter. Un clic droit sur le bouton ou sur l'icône bouche près de l'horloge permet de lire l'état détaillé, copier la dernière transcription ou quitter. Windows peut placer cette icône dans les icônes masquées.
 
 Les notifications jouent un do central doux (261,63 Hz), en PCM stéréo 48 kHz / 24 bits, avec une attaque et une extinction progressives. Le fichier `sons/do-doux.wav` est généré par `son_dictee.py` et inclus dans la version portable.
 
-Si vous changez de fenêtre pendant la transcription, une pastille orange **!** apparaît : cliquez sur la bouche pour copier le résultat, puis collez-le vous-même dans votre document. Le clic droit précise **Texte à copier** ou **Réessayer** en cas d'erreur (pastille rouge) ; dans ce dernier cas, cliquez sur la bouche pour afficher le détail puis réessayer. La copie est également accessible par clic droit après une erreur d'insertion. Les diagnostics sont disponibles dans `donnees/dictee.log` et `donnees/dictee-console.log` ; la dernière transcription est gardée en mémoire, sans historique écrit par l'application.
+Si vous changez de fenêtre pendant la transcription, la bouche devient orange : cliquez sur la bouche pour copier le résultat, puis collez-le vous-même dans votre document. Le clic droit précise **Texte à copier** ou **Réessayer** en cas d'erreur (bouche rouge foncé) ; dans ce dernier cas, cliquez sur la bouche pour afficher le détail puis réessayer. La copie est également accessible par clic droit après une erreur d'insertion. Les diagnostics sont disponibles dans `donnees/dictee.log` et `donnees/dictee-console.log` ; la dernière transcription est gardée en mémoire, sans historique écrit par l'application.
 
 Un nouveau lancement conserve l'instance et le modèle déjà ouverts. Pour passer de l'ancienne version en console à cette version, fermez l'ancienne console avant le premier lancement. Si Ctrl+Alt+Espace est occupé par une autre application, le bouton reste utilisable.
 
 Vous pouvez créer sur votre Bureau un raccourci vers **Dictee-LinTO.exe** ; il reste lié à ce dossier, qui doit conserver son emplacement. Le démarrage automatique avec Windows n'est pas activé.
 
-Les SVG du nouveau bouton sont dans `bouton/svg-guide` ; `bouton/svg-guide/generer_images.py` les rend sous forme de bandes PNG dans `bouton/clair` et `bouton/sombre`. Chaque bande contient des images de 56 × 56 : normal, survol et appui, ou étapes d'animation. La génération demande CairoSVG et Pillow ; l'application lit les PNG avec GDI+ et les affiche en transparence par pixel (`affichage_bouton.py`), sans nouvelle dépendance. L'icône Windows près de l'horloge et de `Dictee.exe` reste la bouche sur disque tricolore, dans `bouche-en-coeur.ico` ; `icone_dictee.py` permet toujours de régénérer cette icône et les anciennes ressources dans `archives/boutons-historiques`.
+Les SVG du nouveau bouton sont dans `bouton/svg-guide` ; `bouton/svg-guide/generer_images.py` les rend sous forme de bandes PNG dans `bouton/clair` et `bouton/sombre`. Chaque bande contient des images de 42 × 42 : normal, survol et appui, ou étapes d'animation. La génération demande CairoSVG et Pillow ; l'application lit les PNG avec GDI+ et les affiche en transparence par pixel (`affichage_bouton.py`), sans nouvelle dépendance. L'icône Windows près de l'horloge et de `Dictee.exe` reste la bouche sur disque tricolore, dans `bouche-en-coeur.ico` ; `icone_dictee.py` permet toujours de régénérer cette icône et les anciennes ressources dans `archives/boutons-historiques`.
 
 Python 3.11 et les dépendances existantes restent nécessaires (`sounddevice`, `numpy`, `psutil` et celles de l'application ci-dessus). L'interface utilise Tkinter et les API Windows, sans nouvelle dépendance Python. Le lanceur cherche d'abord Python dans `%LOCALAPPDATA%\Programs\Python\Python311`, puis utilise le lanceur `py -3.11` pour le trouver.
 
