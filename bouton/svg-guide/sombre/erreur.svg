@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="titre">
+  <title id="titre">Erreur — thème sombre</title>
+  <defs><linearGradient id="bouche" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#08080c"/><stop offset="1" stop-color="#4a0010"/></linearGradient></defs>
+  <circle cx="100" cy="100" r="90" fill="#202937"/>
+  <path d="M 17 103 C 31 91 52 62 70 55 C 82 50 93 55 100 62 C 107 55 118 50 130 55 C 149 63 168 91 183 103 C 165 122 147 151 100 153 C 53 151 35 122 17 103 Z" fill="#ff172d"/>
+  <path d="M 17 103 C 43 98 58 84 76 82 C 87 81 93 84 100 84 C 107 84 113 81 124 82 C 142 84 157 98 183 103 C 154 112 138 127 100 127 C 62 127 46 112 17 103 Z" fill="url(#bouche)"/>
+  <path d="M 57 91 C 65 87 70 83 78 82 C 87 81 93 84 100 84 C 107 84 113 81 122 82 C 130 83 135 87 143 91 C 129 94 116 95 100 95 C 84 95 71 94 57 91 Z" fill="#fff"/>
+  <path d="M 59 72 C 64 67 69 64 75 64" fill="none" stroke="#fff" stroke-opacity=".62" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="167" cy="31" r="32" fill="#e60026" stroke="#fff" stroke-width="4"/>
+  <path d="M 167 16 L 167 33" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="167" cy="44" r="4.5" fill="#fff"/>
+</svg>

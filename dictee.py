@@ -1,17 +1,8 @@
-"""Dictée LinTO locale : Ctrl+Alt+Espace démarre et arrête le micro."""
+"""Insertion Unicode ciblée et point d'entrée de la dictée Windows."""
 
 import ctypes
 from ctypes import wintypes
-import threading
 import time
-import warnings
-import winsound
-
-import numpy as np
-import sounddevice as sd
-
-from app import SAMPLE_RATE, get_asr
-
 
 user32 = ctypes.WinDLL("user32", use_last_error=True)
 user32.GetForegroundWindow.restype = wintypes.HWND
@@ -50,10 +41,12 @@ user32.SendInput.argtypes = [wintypes.UINT, ctypes.POINTER(INPUT), ctypes.c_int]
 user32.SendInput.restype = wintypes.UINT
 
 
-def insert_text(text, window=None):
+def insert_text(text, window=None, cancelled=None):
     # KEYEVENTF_UNICODE attend des unités UTF-16, y compris les paires de substitution.
     encoded = text.encode("utf-16-le")
     for i in range(0, len(encoded), 2):
+        if cancelled is not None and cancelled.is_set():
+            return
         if window and user32.GetForegroundWindow() != window:
             raise RuntimeError("La fenêtre a changé pendant l'insertion")
         unit = int.from_bytes(encoded[i:i + 2], "little")
@@ -67,73 +60,8 @@ def insert_text(text, window=None):
 
 
 def main():
-    print("Chargement du modèle LinTO...", flush=True)
-    asr = get_asr()
-    # MOD_NOREPEAT évite les bascules répétées lorsque la touche reste enfoncée.
-    if not user32.RegisterHotKey(None, 1, 0x0002 | 0x0001 | 0x4000, 0x20):
-        raise ctypes.WinError(ctypes.get_last_error())
-    print("Prêt : Ctrl+Alt+Espace pour démarrer/arrêter. Ctrl+C pour quitter.", flush=True)
-    chunks = []
-    stream = None
-    target = None
-    busy = threading.Event()
-
-    def transcribe(audio, window):
-        try:
-            print("Transcription...", flush=True)
-            with warnings.catch_warnings():
-                warnings.filterwarnings("ignore", message=r"Using the model-agnostic default `max_length`.*", category=UserWarning)
-                text = asr({"array": audio, "sampling_rate": SAMPLE_RATE})["text"].strip()
-            print(f"Transcription : {text}", flush=True)
-            # Éviter que Ctrl ou Alt encore maintenu transforme le texte en raccourcis.
-            while any(user32.GetAsyncKeyState(key) & 0x8000 for key in (0x11, 0x12, 0x20)):
-                time.sleep(0.05)
-            if text and user32.GetForegroundWindow() == window:
-                insert_text(text, window)
-                print("Texte inséré.", flush=True)
-            elif text:
-                print("Fenêtre changée : texte non inséré, disponible ci-dessus.", flush=True)
-            winsound.Beep(900, 120)
-        except Exception as exc:
-            print(f"Erreur de transcription ou d'insertion : {exc}", flush=True)
-        finally:
-            busy.clear()
-
-    try:
-        msg = wintypes.MSG()
-        while user32.GetMessageW(ctypes.byref(msg), None, 0, 0) > 0:
-            if msg.message != 0x0312 or msg.wParam != 1:
-                continue
-            if busy.is_set():
-                print("Transcription en cours ; raccourci ignoré.", flush=True)
-            elif stream is None:
-                try:
-                    target = user32.GetForegroundWindow()
-                    chunks.clear()
-                    winsound.Beep(1100, 120)
-                    stream = sd.InputStream(samplerate=SAMPLE_RATE, channels=1, dtype="float32",
-                                            callback=lambda data, frames, timing, status: chunks.append(data.copy()))
-                    stream.start()
-                    print("Enregistrement...", flush=True)
-                except Exception as exc:
-                    if stream is not None:
-                        stream.close()
-                    stream = None
-                    print(f"Erreur microphone : {exc}", flush=True)
-            else:
-                stream.stop()
-                stream.close()
-                stream = None
-                winsound.Beep(600, 120)
-                if chunks:
-                    busy.set()
-                    threading.Thread(target=transcribe, args=(np.concatenate(chunks).ravel(), target), daemon=True).start()
-                else:
-                    print("Aucun son enregistré.", flush=True)
-    finally:
-        if stream is not None:
-            stream.close()
-        user32.UnregisterHotKey(None, 1)
+    from dictee_windows import run
+    run()
 
 
 if __name__ == "__main__":

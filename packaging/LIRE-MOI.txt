@@ -1,0 +1,46 @@
+DICTEE LINTO - VERSION PORTABLE WINDOWS 64 BITS
+
+1. Décompressez le ZIP entier dans un dossier où vous pouvez écrire.
+2. Ouvrez Dictee.exe. Python n'a pas besoin d'être installé.
+3. Attendez que la bouche devienne rouge : le modèle est prêt.
+4. Cliquez dans votre document, puis sur la bouche pour dicter.
+5. Cliquez à nouveau pour arrêter et insérer le texte.
+
+Le bouton est une bouche rouge sur un disque clair ou sombre selon Windows.
+Bouche grisée et arc gris qui tourne : chargement.
+Bouche ouverte, micro et anneau rouge qui pulse : le micro enregistre.
+Bouche ouverte et arc rouge qui tourne : transcription.
+Pastille orange ou rouge « ! » : clic droit pour lire l'état ou récupérer le texte.
+Son de notification : do central doux, stéréo 48 kHz / 24 bits, avec fondu progressif.
+Clic droit : copier la dernière transcription ou quitter.
+Glisser : déplacer le bouton. Ctrl+Alt+Espace : même action que le clic.
+
+Conservez Dictee.exe, _internal et modele dans le même dossier.
+Vous pouvez déplacer le dossier entier ou le copier sur une clé USB.
+Le dossier doit être accessible en écriture. Ne lancez pas directement depuis le ZIP.
+Le démarrage automatique avec Windows n'est pas activé.
+
+Cette édition utilise le processeur : pas de carte NVIDIA ni de CUDA nécessaires.
+Le chargement et la transcription peuvent prendre plus de temps selon le PC.
+Le modèle est inclus : aucune connexion Internet n'est nécessaire.
+Aucun enregistrement ou historique de transcription n'est enregistré par défaut.
+Les diagnostics restent dans donnees ; le presse-papiers n'est modifié que sur demande.
+Le microphone par défaut de Windows est utilisé.
+
+Gardez le curseur dans le même champ de texte pendant la transcription.
+Si vous changez de fenêtre, le texte reste récupérable par clic droit.
+Une application ouverte en administrateur peut refuser l'insertion.
+Si Ctrl+Alt+Espace est déjà occupé, utilisez le bouton.
+L'exécutable n'est pas signé : selon la politique du PC, Windows ou votre
+organisation peut demander une validation. La compatibilité est à vérifier
+sur les autres PC Windows x64 destinataires.
+
+Les licences des bibliothèques sont dans licences.
+Le modèle LINAGORA Labs est distribué sous CC BY 4.0, sans modification.
+Voir modele/ATTRIBUTION.txt et https://huggingface.co/linagora/linto_stt_fr_fastconformer_pc
+
+OUTILS DE VERIFICATION (usage technique, sans enregistrement du micro)
+Dictee.exe --verifier-interface
+Dictee.exe --diagnostic --audio chemin-vers-un-fichier.wav
+Le second contrôle interdit le réseau au processus et écrit son résultat,
+y compris le texte du fichier d'essai fourni, dans donnees/diagnostic.json.

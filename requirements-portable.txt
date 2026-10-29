@@ -1,0 +1,6 @@
+# Environnement de construction uniquement ; PyTorch CPU est install? s?par?ment.
+transformers==5.21.0
+librosa==0.11.0
+soundfile==0.13.1
+sounddevice==0.5.5
+pyinstaller==6.22.0

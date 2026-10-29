@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="titre">
+  <title id="titre">Dictée LinTO — Bouche en cœur</title>
+  <defs>
+    <clipPath id="disque"><circle cx="64" cy="64" r="61"/></clipPath>
+    <linearGradient id="relief" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".3"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".17"/></linearGradient>
+    <linearGradient id="levres" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4464F"/><stop offset="1" stop-color="#C8142A"/></linearGradient>
+    <filter id="flou"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <circle cx="64" cy="64" r="61" fill="#FFFFFF"/>
+  <g clip-path="url(#disque)">
+    <rect x="3" y="3" width="40.67" height="122" fill="#1F45B5"/>
+    <rect x="84.33" y="3" width="40.67" height="122" fill="#E4262F"/>
+    <rect x="3" y="3" width="122" height="122" fill="url(#relief)"/>
+  </g>
+  <circle cx="64" cy="64" r="61" fill="none" stroke="#FFFFFF" stroke-opacity="0.59" stroke-width="2"/>
+  <g transform="translate(-3.433 -6.594) scale(0.5268)">
+    <path d="M 18 122 C 48 125 63 80 99 80 C 111 80 122 87 128 94 C 135 85 146 80 158 80 C 193 80 208 125 238 122 C 210 140 190 183 128 183 C 67 183 47 140 18 122 Z" fill="url(#levres)"/>
+    <g fill="#FFFFFF" fill-opacity=".6" filter="url(#flou)"><ellipse cx="128" cy="162" rx="30" ry="6"/><ellipse cx="96" cy="93" rx="14" ry="5"/><ellipse cx="160" cy="93" rx="14" ry="5"/></g>
+    <path d="M 18 122 C 39 131 53 122 78 128 C 99 132 111 137 128 137 C 145 137 157 132 178 128 C 203 122 217 131 238 122" fill="none" stroke="#1A0508" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M 18 122 C 48 125 63 80 99 80 C 111 80 122 87 128 94 C 135 85 146 80 158 80 C 193 80 208 125 238 122 C 210 140 190 183 128 183 C 67 183 47 140 18 122 Z" fill="none" stroke="#1A0508" stroke-width="3.1" stroke-linejoin="round"/>
+  </g>
+</svg>

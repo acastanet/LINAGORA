@@ -1,0 +1,29 @@
+DICTÉE LINTO — VERSION GPU LIGHT WINDOWS 64 BITS
+
+Cette édition utilise les bibliothèques Python déjà installées sur le PC. Elle
+comprend un petit exécutable de lancement, mais pas les bibliothèques GPU.
+Le PC doit disposer de Python 3.11 64 bits (et, hors installation usuelle, du lanceur py), ainsi que des
+bibliothèques torch avec prise en charge CUDA, transformers, librosa, soundfile,
+sounddevice, numpy, scipy et psutil, installées pour ce Python. Une carte NVIDIA,
+un pilote compatible et une installation PyTorch CUDA fonctionnelle sont requis.
+Le pilote et les bibliothèques doivent être compatibles entre eux ; un toolkit
+CUDA installé seul ne remplace pas une installation de PyTorch compatible CUDA.
+Le logiciel n'installe ni ne télécharge de dépendances.
+
+1. Décompressez tout le ZIP dans un dossier accessible en écriture.
+2. Double-cliquez sur Dictee-GPU.exe et attendez que la bouche soit rouge.
+3. Cliquez dans votre document, puis sur la bouche pour dicter. Cliquez à nouveau
+   pour arrêter et insérer le texte. Clic droit pour copier le résultat ou quitter.
+
+Le modèle est inclus et utilisé hors ligne. Le calcul utilise obligatoirement le
+GPU : si CUDA est indisponible, une erreur apparaît dans le menu du bouton.
+Dictee-GPU.exe est un petit lanceur : les bibliothèques GPU ne sont pas incluses.
+Gardez le dossier modele et les autres fichiers ensemble lors d'un déplacement.
+Le thème du bouton suit les paramètres Windows ; Ctrl+Alt+Espace est un raccourci.
+
+Pour vérifier les dépendances et CUDA, lancez Diagnostic-GPU.bat. Pour tester
+également une transcription, dans une console :
+  Diagnostic-GPU.bat --audio "chemin-vers-un-fichier.wav"
+Le rapport est dans donnees/diagnostic.json et les détails de démarrage dans
+donnees/dictee-console.log. Le diagnostic bloque les connexions réseau.
+Le modèle LINAGORA Labs est distribué sous CC BY 4.0 : voir modele/ATTRIBUTION.txt.

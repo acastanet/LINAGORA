@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Dictée vocale">
+  <circle cx="32" cy="32" r="30.5" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="0.65"/>
+  <g transform="translate(7.168 6.489) scale(.194)">
+<path xmlns="http://www.w3.org/2000/svg" d="M18 122 C48 125 63 80 99 80 C111 80 122 87 128 94 C135 85 146 80 158 80 C193 80 208 125 238 122 C210 140 190 183 128 183 C67 183 47 140 18 122 Z" fill="#E34234" stroke="#111111" stroke-width="3.1" stroke-linejoin="round" />
+
+<path xmlns="http://www.w3.org/2000/svg" d="M18 122 C39 131 53 122 78 128 C99 132 111 137 128 137 C145 137 157 132 178 128 C203 122 217 131 238 122" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" />
+
+
+  </g>
+</svg>

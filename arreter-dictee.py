@@ -5,7 +5,8 @@ import os
 
 import psutil
 
-script = Path(__file__).with_name("dictee.py").resolve()
+scripts = {Path(__file__).with_name(name).resolve()
+           for name in ("dictee.py", "lancer-dictee.pyw", "dictee_windows.py")}
 current_pid = os.getpid()
 for process in psutil.process_iter(["pid", "name", "cmdline"]):
     try:
@@ -13,12 +14,12 @@ for process in psutil.process_iter(["pid", "name", "cmdline"]):
             continue
         args = process.info["cmdline"] or []
         for arg in args[1:]:
-            if not arg.lower().endswith("dictee.py"):
+            if Path(arg).name.lower() not in {p.name.lower() for p in scripts}:
                 continue
             path = Path(arg)
             if not path.is_absolute():
                 path = Path(process.cwd()) / path
-            if path.resolve() == script:
+            if path.resolve() in scripts:
                 print(f"Arrêt de l'ancienne dictée (PID {process.pid})...")
                 process.terminate()
                 process.wait(timeout=10)

@@ -1,21 +1,10 @@
 """Mini-interface locale pour tester le modèle de transcription LinTO."""
 
-from functools import lru_cache
 import warnings
 
 import gradio as gr
 import librosa
-import torch
-from transformers import pipeline
-
-MODEL = "linagora/linto_stt_fr_fastconformer_pc"
-SAMPLE_RATE = 16_000
-
-
-@lru_cache(maxsize=1)
-def get_asr():
-    device = 0 if torch.cuda.is_available() else -1
-    return pipeline("automatic-speech-recognition", model=MODEL, device=device)
+from moteur_dictee import MODEL, SAMPLE_RATE, get_asr
 
 
 def transcribe(audio_path):

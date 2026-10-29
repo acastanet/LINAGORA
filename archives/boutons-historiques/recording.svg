@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" role="img" aria-labelledby="titre">
+  <title id="titre">Dictée LinTO — enregistrement</title>
+  <defs>
+    <clipPath id="disque"><circle cx="28" cy="27.5" r="22"/></clipPath>
+    <linearGradient id="relief" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".3"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".17"/></linearGradient>
+    <linearGradient id="levres" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4464F"/><stop offset="1" stop-color="#C8142A"/></linearGradient>
+    <filter id="flou"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="ombre" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#000000" flood-opacity=".27"/></filter>
+  </defs>
+  <circle cx="28" cy="27.5" r="22" fill="#FFFFFF" filter="url(#ombre)"/>
+  <g clip-path="url(#disque)">
+    <rect x="6" y="5.5" width="14.67" height="44" fill="#1F45B5"/>
+    <rect x="35.33" y="5.5" width="14.67" height="44" fill="#E4262F"/>
+    <rect x="6" y="5.5" width="44" height="44" fill="url(#relief)"/>
+  </g>
+  <circle cx="28" cy="27.5" r="22" fill="none" stroke="#E8303A" stroke-width="2.2"/>
+  <g transform="translate(3.68 2.04) scale(0.19)">
+    <path d="M 18 124 C 46 120 62 70 99 70 C 111 70 122 77 128 84 C 134 77 145 70 157 70 C 194 70 210 120 238 124 C 212 150 190 198 128 198 C 66 198 44 150 18 124 Z" fill="url(#levres)"/>
+    <g fill="#FFFFFF" fill-opacity=".6" filter="url(#flou)"><ellipse cx="128" cy="183" rx="26" ry="5"/><ellipse cx="96" cy="81" rx="14" ry="4"/><ellipse cx="160" cy="81" rx="14" ry="4"/></g>
+    <path d="M 32 124 C 60 112 90 104 128 108 C 166 104 196 112 224 124 C 196 150 166 166 128 166 C 90 166 60 150 32 124 Z" fill="#140608" stroke="#1A0508" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 32 124 C 60 112 90 104 128 108 C 166 104 196 112 224 124 C 196 124 164 128 128 128 C 92 128 60 124 32 124 Z" fill="#FFFFFF"/>
+    <path d="M 18 124 C 46 120 62 70 99 70 C 111 70 122 77 128 84 C 134 77 145 70 157 70 C 194 70 210 120 238 124 C 212 150 190 198 128 198 C 66 198 44 150 18 124 Z" fill="none" stroke="#1A0508" stroke-width="3.1" stroke-linejoin="round"/>
+    <g fill="#080808" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round" transform="translate(128 150) scale(0.82) translate(-128 -138)"><rect x="112" y="138" width="32" height="55" rx="16"/><path d="M102 168 A4 4 0 0 1 106 172 V180 A22 22 0 0 0 150 180 V172 A4 4 0 0 1 158 172 V180 A30 30 0 0 1 132 209.73 V219 H141 A4 4 0 0 1 141 227 H115 A4 4 0 0 1 115 219 H124 V209.73 A30 30 0 0 1 98 180 V172 A4 4 0 0 1 102 168 Z"/></g>
+  </g>
+</svg>

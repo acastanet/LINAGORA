@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="titre">
+  <title id="titre">Désactivé — thème clair</title>
+  <defs><linearGradient id="bouche" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#08080c"/><stop offset="1" stop-color="#4a0010"/></linearGradient></defs>
+  <circle cx="100" cy="100" r="90" fill="#efefef"/>
+  <path d="M 17 103 C 31 91 52 62 70 55 C 82 50 93 55 100 62 C 107 55 118 50 130 55 C 149 63 168 91 183 103 C 165 122 147 151 100 153 C 53 151 35 122 17 103 Z" fill="#bcbec0"/>
+  <path d="M 17 103 C 42 105 55 100 73 102 C 86 104 93 109 100 109 C 107 109 114 104 127 102 C 145 100 158 105 183 103" fill="none" stroke="#77797c" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M 59 72 C 64 67 69 64 75 64" fill="none" stroke="#fff" stroke-opacity=".62" stroke-width="6" stroke-linecap="round"/>
+</svg>
